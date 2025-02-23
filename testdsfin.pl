@@ -75,17 +75,17 @@ afficher_itineraire(Destination) :-
 
 % Regles pour executer tout le systeme en une seule commande
 test :-
-    write('Entrez vos deux activités préférées (sous forme de liste, par exemple [plage, culture]): '), nl,
+    write('Entrez vos deux activitï¿½s prï¿½fï¿½rï¿½es (sous forme de liste, par exemple [plage, culture]): '), nl,
     read(Activites),
     write('Entrez votre budget (budget_moyen ou budget_eleve): '), nl,
     read(Budget),
-    write('Entrez le climat désiré (climat_tropical, climat_saharien ou climat_tempere): '), nl,
+    write('Entrez le climat dï¿½sirï¿½ (climat_tropical, climat_saharien ou climat_tempere): '), nl,
     read(Climat),
     (   is_list(Activites), length(Activites, 2) ->
         [Activite1, Activite2] = Activites,
         findall(Destination, recommander_par_criteres(Activite1, Activite2, Budget, Climat, Destination), Destinations),
         (   Destinations = [] ->
-            write('Désolé, aucune destination ne correspond à ces critères.'), nl
+            write('Dï¿½solï¿½, aucune destination ne correspond ï¿½ ces critï¿½res.'), nl
         ;   afficher_toutes_destinations(Destinations)
         )
     ;   write('Erreur: Veuillez entrer exactement deux activites sous forme de liste.'), nl, fail
