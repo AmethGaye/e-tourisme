@@ -9,7 +9,7 @@
 
 **Il faut que vous positionez au  niveau  du  dossier Backend**
 - py -3 -m venv .venv
-- .venv\Scripts\activate
+- .venv\Scripts\activate\
 Install Flask avec la commande suivante :
  - pip install Flask
 intall pyswip avec la commande 
