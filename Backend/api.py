@@ -14,6 +14,11 @@ def handle_bytes(obj):
         return obj.decode('utf-8')
     raise TypeError(f"Object of type {type(obj)} is not JSON serializable")
 
+
+@app.route("/")
+def hello_world():
+    return "<p>Hello, World!</p>"
+
 @app.route('/api/recommandation', methods=['POST'])
 def recommandation():
     try:
